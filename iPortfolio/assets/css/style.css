@@ -434,54 +434,71 @@ section {
 # Akills
 --------------------------------------------------------------*/
 .skills .progress {
-  height: 230px;
-  width: 560px;
+  height: auto;  /* 改為自適應高度 */
+  min-height: 230px;
+  width: 100%;  /* 改為百分比寬度 */
+  max-width: 560px;
   display: block;
   background: none;
   border-radius: 0;
+  margin-bottom: 20px;
 }
 
 .skills .progress .skill {
-  padding: 0;
-  margin: 0 12px 12px 0px;
+  padding: 8px 12px;  /* 增加內邊距 */
+  margin: 0 0 8px 0;  /* 調整外邊距 */
   text-transform: uppercase;
-  display: block;
+  display: inline-block;  /* 改為行內塊元素 */
   font-weight: 500;
   font-family: "Poppins", sans-serif;
   color: #050d18;
   font-size: 14px;
-  max-width: 600px;
-  overflow: hidden;
-  white-space: nowrap;
-  line-height: 1; /* 調整行距 */
+  background: #f8f9fa;  /* 添加背景色 */
+  border-radius: 4px;  /* 添加圓角 */
+  line-height: 1.4;  /* 調整行高 */
+  white-space: normal;  /* 允許換行 */
+  word-wrap: break-word;  /* 長單詞換行 */
+  max-width: 100%;  /* 最大寬度改為100% */
 }
 
-.skills .progress .skill .val {
-  float: right;
-  font-style: normal;
+.skills .progress .skill:hover {
+  background: #e9ecef;  /* 懸停效果 */
+  transition: background 0.3s ease;
 }
 
-.skills .progress-bar-wrap {
-  background: #dce8f8;
-  height: 45px;
-}
-
-.skills .progress-bar {
-  width: 2px;
-  height: 18px;
-  transition: 0.9s;
-  background-color: #149ddd;
+.skill-section {
+  padding: 15px;  /* 添加內邊距 */
+  margin-bottom: 20px;  /* 添加底部邊距 */
 }
 
 .skill-section h3 {
-  margin-bottom: 18px; 
-  border-bottom: 1.5px solid #000; /* 添加底線 */
-  width: 70%; /* 調整底線的長度 */
+  margin-bottom: 20px;
+  padding-bottom: 10px;  /* 增加底部內邊距 */
+  border-bottom: 2px solid #149ddd;  /* 改變底線顏色 */
+  width: 100%;  /* 調整寬度為全寬 */
+  color: #173b6c;  /* 添加標題顏色 */
 }
 
 .skill-title {
-  font-weight: 900; /* 設置字體粗細為 900 */
-  font-size: 24.5px;
+  font-weight: 700;  /* 調整字體粗細 */
+  font-size: 22px;  /* 稍微調整字體大小 */
+  letter-spacing: 0.5px;  /* 添加字距 */
+}
+
+/* 響應式調整 */
+@media (max-width: 768px) {
+  .skills .progress {
+    max-width: 100%;
+  }
+  
+  .skills .progress .skill {
+    font-size: 13px;
+    padding: 6px 10px;
+  }
+  
+  .skill-title {
+    font-size: 20px;
+  }
 }
 
 /*--------------------------------------------------------------
